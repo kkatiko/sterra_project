@@ -9,6 +9,7 @@ def is_complex(s):
     pattern = r'^[+-]?\d*\.?\d+[+-]\d*\.?\d*[ij]$|^[+-]?\d*\.?\d*[ij]$'
     return bool(re.fullmatch(pattern, s.lower().replace(' ', '')))
 
+
 def solve_quadratic_equation(a, b, c):
     if a == 0:
         if b == 0:
