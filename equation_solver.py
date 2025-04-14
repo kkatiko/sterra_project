@@ -14,7 +14,8 @@ def solve_quadratic_equation(a, b, c):
     if a == 0:
         if b == 0:
             if c == 0:
-                raise ValueError("Уравнение имеет бесконечное количество решений")
+                raise ValueError("Уравнение имеет бесконечное "
+                                 "количество решений")
             else:
                 raise ValueError("Уравнение не имеет решений")
         else:
@@ -59,7 +60,8 @@ def input_float(abc):
         try:
             value_str = input(abc)
             if value_str.lower() == 'inf':
-                print("Ошибка: коэффициент не может быть бесконечностью. Введите вещественное число.")
+                print("Ошибка: коэффициент не может быть бесконечностью. "
+                      "Введите вещественное число.")
                 continue
 
             if is_complex(value_str):
@@ -73,7 +75,8 @@ def input_float(abc):
                 continue
 
             if math.isinf(value):
-                print("Ошибка: коэффициент не может быть бесконечностью. Введите вещественное число.")
+                print("Ошибка: коэффициент не может быть бесконечностью. "
+                      "Введите вещественное число.")
                 continue
 
             if not value_str.isascii():
@@ -86,11 +89,13 @@ def input_float(abc):
 
         except KeyboardInterrupt:
             current_time = time.time()
-            if current_time - last_interrupt_time < 1.0:  # Двойное нажатие за 1 секунду
+            # Двойное нажатие за 1 секунду
+            if current_time - last_interrupt_time < 1.0:
                 print("\nЭкстренное завершение программы.")
                 sys.exit(0)
             else:
-                print("\nДля выхода нажмите Ctrl+C ещё раз в течении 1 секунды. Продолжаем ввод...")
+                print("\nДля выхода нажмите Ctrl+C ещё раз "
+                      "в течении 1 секунды. Продолжаем ввод...")
                 last_interrupt_time = current_time
 
         except Exception as e:
